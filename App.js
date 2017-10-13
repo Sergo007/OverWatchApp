@@ -2,120 +2,6 @@ import React, {Component} from 'react';
 import {FlatList, Text, StyleSheet, View, Image, ActivityIndicator} from 'react-native';
 import Title from './Title';
 
-const rows = [
-  {
-    id: 0,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 1,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 2,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 3,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 4,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 5,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 6,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 7,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 8,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 9,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }, {
-    id: 10,
-    data: {
-      categoryName: 'New Hero',
-      lastActive: '21 mins ago',
-      imgUrl: '',
-      title: 'Symmetra',
-      description: 'fdsa fdsafdsafd safdsaf dsafds afdsafd afdsafdsa',
-      likes: 12
-    }
-  }
-];
-
 const extractKey = ({id}) => id;
 
 export default class App extends Component {
@@ -133,7 +19,7 @@ export default class App extends Component {
         <Text style={styles.row_lastActive}>{item.data.lastActive}</Text>
         <Image
           style={styles.row_img}
-          source={require('./img/test_support.png')}
+          source={{uri: 'https://dreambit.io/test_requests/test_support.png'}}
         />
         <Text style={styles.row_title}>{item.data.title}</Text>
         <Text style={styles.row_description}>{item.data.description}</Text>
@@ -155,7 +41,7 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    fetch('https://facebook.github.io/react-native/movies.json', {
+    fetch('https://dreambit.io/test_requests/rows.json', {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -164,9 +50,9 @@ export default class App extends Component {
     })
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log(JSON.stringify(rows));
       this.setState({
         isLoading: false,
+        rows: responseJson
       }, function () {
         // do something with new state
       });
@@ -192,7 +78,7 @@ export default class App extends Component {
         <Title>Owerwathch Insight</Title>
         <FlatList
           style={styles.container}
-          data={rows}
+          data={this.state.rows}
           renderItem={this.renderItem}
           keyExtractor={extractKey}
         />
