@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet,PixelRatio } from 'react-native'
 
 export default class Title extends Component {
 
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: '#ff9c00',
     width: '100%',
-    padding: 15,
+    padding: PixelRatio.getPixelSizeForLayoutSize(5),
     elevation: 5
   },
   title: {
