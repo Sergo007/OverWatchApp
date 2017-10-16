@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
 export default class ArticleItem extends Component {
 
@@ -17,9 +17,12 @@ export default class ArticleItem extends Component {
         <Text style={styles.row_description}>{article.data.description}</Text>
         <View style={styles.row_horizontalLine}></View>
         <View style={styles.row_buttons}>
-          <View style={styles.row_button_details}>
-            <Text style={{color: '#fff'}}>hero</Text>
-          </View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
+            <View style={styles.row_button_details}>
+              <Text style={{color: '#fff'}}>hero</Text>
+            </View>
+          </TouchableOpacity>
+
           <View style={styles.row_button_likes}>
             <Text>256</Text>
             <Image

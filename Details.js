@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class App extends Component {
+export default class Details extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
@@ -37,7 +37,7 @@ export default class App extends Component {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text> BACK </Text>
           </TouchableOpacity>
-          <Text style={styles.title}> My Header </Text>
+          <Text style={styles.title}> details </Text>
         </View>
     }
   };
@@ -45,7 +45,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.app}>
-        <ListViewArticles style={styles.container} navigation={this.props.navigation}></ListViewArticles>
+        <Text>details</Text>
       </View>
     );
   }

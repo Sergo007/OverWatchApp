@@ -14,7 +14,7 @@ export default class ListViewArticles extends Component {
 
   renderItem = ({item}) => {
     return (
-      <ArticleItem article={item}></ArticleItem>
+      <ArticleItem article={item} navigation={this.props.navigation}></ArticleItem>
     );
   };
 
