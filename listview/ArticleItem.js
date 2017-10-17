@@ -17,7 +17,7 @@ export default class ArticleItem extends Component {
         <Text style={styles.row_description}>{article.data.description}</Text>
         <View style={styles.row_horizontalLine}></View>
         <View style={styles.row_buttons}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Details', {article: article})}>
             <View style={styles.row_button_details}>
               <Text style={{color: '#fff'}}>hero</Text>
             </View>

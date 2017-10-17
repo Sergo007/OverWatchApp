@@ -5,7 +5,10 @@ import Details from './Details';
 
 export const stackNavigator = StackNavigator({
   Home: { screen: App },
-  Details: { screen: Details },
+  Details: {
+    path: '/:article',
+    screen: Details
+  },
 });
 
 AppRegistry.registerComponent('OverWatchApp', () => stackNavigator);
