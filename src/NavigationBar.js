@@ -1,33 +1,17 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, PixelRatio, TouchableOpacity} from 'react-native';
-
+import If from './utils/If';
 export default class NavigationBar extends Component {
 
   render() {
     const {navigation, options} = this.props;
-    if (options.isShowBackButton !== undefined) {
-      if (options.isShowBackButton) {
-        return (
-          <View style={styles.header}>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Text> BACK </Text>
-            </TouchableOpacity>
-            <Text style={styles.title}> {options.title} </Text>
-          </View>
-        );
-      } else {
-        return (
-          <View style={styles.header}>
-            <Text style={styles.title}> {options.title} </Text>
-          </View>
-        );
-      }
-    }
     return (
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text> BACK </Text>
-        </TouchableOpacity>
+        <If is={options.isShowBackButton}>
+          <TouchableOpacity  onPress={() => navigation.goBack()}>
+            <Text> BACK </Text>
+          </TouchableOpacity>
+        </If>
         <Text style={styles.title}> {options.title} </Text>
       </View>
     );
