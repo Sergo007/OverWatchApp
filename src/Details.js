@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import ArticleItem from './listview/ArticleItem';
-import Title from './Title';
+import NavigationBar from './NavigationBar';
 
 const styles = StyleSheet.create({
   app: {
@@ -20,12 +20,12 @@ export default class Details extends Component {
     return {
       title: 'Welcome',
       header:    // Your custom header
-        <Title
+        <NavigationBar
           navigation={navigation}
           options={{
             title: params.article.data.title
           }}
-        > </Title>
+        > </NavigationBar>
     }
   };
 

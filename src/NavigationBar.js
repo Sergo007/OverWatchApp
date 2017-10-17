@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {View, Text, StyleSheet, PixelRatio, TouchableOpacity} from 'react-native';
 
-export default class Title extends Component {
+export default class NavigationBar extends Component {
 
   render() {
     const {navigation, options} = this.props;

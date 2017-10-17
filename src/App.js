@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
-import Title from './Title';
 import ListViewArticles from './listview/ListViewArticles';
+import NavigationBar from './NavigationBar';
 
 export default class App extends Component {
 
@@ -9,12 +9,12 @@ export default class App extends Component {
     return {
       title: 'Welcome',
       header:    // Your custom header
-        <Title
+        <NavigationBar
           navigation={navigation}
           options={{
             title: 'My App Header',
           }}
-        > </Title>
+        > </NavigationBar>
     }
   };
 
