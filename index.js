@@ -1,7 +1,7 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import App from './src/App';
 import {StackNavigator} from 'react-navigation';
-import Details from './Details';
+import Details from './src/Details';
 
 export const stackNavigator = StackNavigator({
   Home: { screen: App },

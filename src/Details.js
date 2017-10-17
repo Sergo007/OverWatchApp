@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, PixelRatio} from 'react-native';
-import ListViewArticles from './listview/ListViewArticles';
+import {StyleSheet, View} from 'react-native';
 import ArticleItem from './listview/ArticleItem';
 import Title from './Title';
 

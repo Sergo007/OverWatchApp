@@ -27,7 +27,7 @@ export default class ArticleItem extends Component {
             <Text>256</Text>
             <Image
               style={styles.button_like}
-              source={require('../img/like.png')}
+              source={require('../../img/like.png')}
             />
           </View>
         </View>

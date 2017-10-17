@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View, PixelRatio} from 'react-native';
-import ListViewArticles from './listview/ListViewArticles';
+import {StyleSheet, View} from 'react-native';
 import Title from './Title';
+import ListViewArticles from './listview/ListViewArticles';
 
 export default class App extends Component {
 
